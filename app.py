@@ -103,7 +103,7 @@ def product_selector():
     dairy = st.radio('Is it for Dairy application ?', ('Yes','No'), index=0)
     if dairy == 'No':
         dset['J'] = dset['J'].replace({0:1})
-        dairy = 'Yes'
+        dairy = 'both'
 
     # Function type
     func_type = st.selectbox('Type of function required',(
@@ -281,6 +281,8 @@ def product_selector():
 
         n_amine = st.radio('Is Neutralizing Amine treatment required for steam and condensate treatment?', ('Yes','No'), index=1)
         if n_amine == 'Yes':
+            if dairy == 'Yes':
+                st.warning("💡: Neutralizing Amine products can not be used for dairy applications. Please recheck the question 'Is it for Dairy application ?' ")
             sl = st.radio('Is a Solid/Liquid product required?', ('Solid','Liquid'), index=0, key='2')
             yellow = st.radio('Is there Yellow metal in the system?', ['Yes', 'No'], index=0)
             if yellow == 'No':
@@ -465,10 +467,10 @@ def product_selector():
                         pred_ui = clf.predict(valv_df)
                         final_prods.extend(pred_ui)
                     else:
-                        final_prods.extend(['No product found'])
+                        final_prods.extend(['No product found or the treatment was not selected'])
                         # st.write(f'found {key}')
                 else:
-                    final_prods.extend(['No product found'])
+                    final_prods.extend(['No product found or the treatment was not selected'])
 
             final_zip = list(zip(final_prods,final_prods_keys))
             final_dict = {}
@@ -507,10 +509,3 @@ if auth_sbmt:
         st.sidebar.error('User does not exist! Please contact the admin to add you as a user')
 else :
     st.info('Please login to continue')
-
-
-
-
-    
-
-   
