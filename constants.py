@@ -12,21 +12,21 @@ change_dict = {
     3:'OPCO',
     4:'OPCO',
     5:'OPCO',
-    6:'Operating Pressure',
+    6:'Operating Pressure (bar)',
     7:'Feed water quality',
-    8:'Is it FDA approved for direct food application?',
-    9:'Is it for Dairy application?',
-    10:'Type of Function Required ?',
-    11:'Is a Solid / Liquid  Product required ?',
-    12:'Is Internal Treatment required ?',
-    13:'Is Phosphate (PO4) allowed in the product?',
-    14:'Is Defoamer required',
-    15:'Is Neutralizing Amine',
-    16:'Is it compatible with yellow metals',
-    17:'Distribution Ratio',
-    18:'Is Oxygen Scavenger required?',
-    19:'Is it a Passivation product ?',
-    20:'Is there catalyst in the product ?',
+    8:'Is an FDA approved product for direct food application required?',
+    9:'Is it for Dairy application ?',
+    10:'Type of function required',
+    11:'Is a Solid/Liquid product required?',
+    12:'Is Internal treatment required?',
+    13:'Is Phosphate (PO4) allowed in the product ?',
+    14:'Is a Defoamer required ?',
+    15:'Is Neutralizing Amine treatment required for steam and condensate treatment?',
+    16:'Is there Yellow metal in the system?',
+    17:'Distribution ratio',
+    18:'Is Oxygen Scavenger required ?',
+    19:'Is Passivation Required?',
+    20:'Is a product that contains catalyst required?',
 }
 
 
@@ -58,7 +58,8 @@ fda_dict ={
 }
 dairy_dict = {
     'Yes':1,
-    'No':0
+    'No':0,
+    'both':1
 }
 
 func_type_dict = {
