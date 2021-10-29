@@ -39,7 +39,7 @@ def amine_function(func_type):
     if func_type == 'Multi Functional (Internal + Amine + O2)':
         dr = st.selectbox('Distribution ratio', ['< 2.4'])
     else:
-        dr = st.selectbox('Distribution ratio', ['< 2.4', '> 2.4','Not Applicable'], index=0)
+        dr = st.selectbox('Distribution ratio', ['< 2.4', '> 2.4'], index=0)
     return (n_amine, yellow, dr)
 
 # ---------------------------------------------------------------------------------
@@ -509,3 +509,10 @@ if auth_sbmt:
         st.sidebar.error('User does not exist! Please contact the admin to add you as a user')
 else :
     st.info('Please login to continue')
+
+
+
+
+    
+
+   
